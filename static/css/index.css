@@ -5,6 +5,7 @@ body {
     background-image: url("../images/1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
@@ -27,15 +28,13 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-#logo-box{
+#logo-box {
     text-align: center;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     color: white;
 }
 
-#content-box{
-    background-color: rgba(0,0,0,0.6);
-}
+
 
 .my-panel {
     background-color: rgba(0, 0, 0, 0.8);
@@ -55,26 +54,40 @@ body {
     background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
 }
 
-.pan-row{
+.pan-row {
     margin-top: 15px;
 }
-.pan-btn-box{
+
+.pan-btn-box {
     text-align: right;
 }
 
-.version-right{
+.version-right {
     color: #1E9FFF;
 }
 
-.success{
+.success {
     color: #009688;
 }
 
-.error{
+.error {
     color: #FF5722;
 }
 
+#footer{
+    text-align: center;
+}
 
+#footer-box {
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    height: 40px;
+    line-height: 40px;
+    -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
 
 
 
