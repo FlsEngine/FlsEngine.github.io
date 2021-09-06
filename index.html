@@ -4,24 +4,71 @@
     <meta charset="UTF-8">
     <title>FlsEngine</title>
     <link rel="stylesheet" href="./static/layui/css/layui.css">
-    <link rel="stylesheet" href="./static/timeline/css/style.css">
     <link rel="stylesheet" href="./static/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
     <link rel="icon" href="./static/images/logo.png" sizes="16x16">
 <body>
-<div class="layui-row">
-    <div class="layui-col-xs8">
-        <div style="position: relative">
-            <div id="left-box">
-            </div>
-            <div id="left-box-mask">
-                <br><br><br>
-                <div class="layui-row" id="content">
-                    <div class="layui-col-xs6">
-                        <div class="layui-card my-panel">
-                            <div class="layui-card-header lan" data-lan-cn="注意事项" data-lan-en="Precautions">注意事项</div>
-                            <div class="layui-card-body">
-                                <p class="lan" data-lan-cn="
+
+<div id="logo-box">
+    <br>
+    <br>
+    <img style="width: 200px;height: 200px" src="./static/images/logo.png">
+    <br>
+    <br>
+    <div id="lan-box">
+        <button class="layui-btn layui-btn-danger layui-btn-xs btn-lan" onclick="SetLan('cn')">CN</button>
+        <button class="layui-btn layui-btn-danger layui-btn-xs btn-lan" onclick="SetLan('en')">EN</button>
+    </div>
+    <br>
+    <br>
+    <div>
+        <div>
+            <span class="lan" data-lan-cn="上次更新时间:" data-lan-en="Last update time:">
+            上次更新时间:
+            </span>
+            <span class="version-right">
+            2020-01-01
+            </span>
+            ,
+            <span class="lan" data-lan-cn="版本:" data-lan-en="Version:">
+                版本:
+            </span>
+            <span class="version-right">
+                1.0
+            </span>
+        </div>
+        <br>
+
+        <!--        <div>
+                    <span class="lan" data-lan-cn="能否用于游戏:" data-lan-en="Can be used in game:">
+                        能否用于游戏:
+                    </span>
+                    <span class="lan success" data-lan-cn="<i class='far fa-smile-beam'></i> 是的，已更新完成"
+                          data-lan-en="<i class='far fa-smile-beam'></i> Yes, the update is complete">
+                    <i class='far fa-smile-beam'></i> 是的，已更新完成
+                    </span>
+                </div>-->
+
+        <div>
+            <span class="lan" data-lan-cn="能否用于游戏:" data-lan-en="Can be used in game:">
+                能否用于游戏:
+            </span>
+            <span class="lan error" data-lan-cn="<i class='far fa-sad-cry'></i> 不能，等待更新"
+                  data-lan-en="<i class='far fa-sad-cry'></i> No, waiting for update">
+            <i class='far fa-sad-cry'></i> 不能，等待更新
+            </span>
+        </div>
+
+    </div>
+    <br>
+    <br>
+</div>
+<div class="row" id="content-box">
+    <div class="layui-col-xs12 layui-col-lg4">
+        <div class="layui-card my-panel">
+            <div class="layui-card-header lan" data-lan-cn="注意事项" data-lan-en="Precautions">注意事项</div>
+            <div class="layui-card-body">
+                <p class="lan" data-lan-cn="
                                 - 游戏更新，软件也需要更新<br>
                                 - 该软件永久免费，请勿上当受骗<br>
                                 - 仅支持正版游戏，不支持盗版或学习版
@@ -30,131 +77,109 @@
                                 - The software is free forever, please do not be deceived<br>
                                 - Only supports genuine games, does not support pirated or learning versions
                                 ">
-                                    - 游戏更新，软件也需要更新
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="layui-card my-panel">
-                            <div class="layui-card-header lan" data-lan-cn="免费修改器" data-lan-en="Free modifier">免费修改器
-                            </div>
-                            <div class="layui-card-body">
-                                <p>
-                                    <i class="fas fa-caret-right" style="color: #FF5722"></i>
-                                    <span class="lan" data-lan-cn="  功能" data-lan-en="  Function">  功能</span>
-                                </p>
-                                <p>- tese</p>
-
-                                <div class="pan-row">
-                                    <p>
-                                        <i class="fas fa-caret-right" style="color: #FF5722"></i>
-                                        <span class="lan" data-lan-cn="  下载" data-lan-en="  Down">  下载</span>
-                                    </p>
-                                    <p class="lan" data-lan-cn="- 加入QQ群或者Discord获取最新文件"
-                                       data-lan-en="- Join QQ group or Discord to get the latest files">
-                                        - 加入QQ群或者Discord获取最新文件
-                                    </p>
-                                    <div>
-                                        - QQ群：582273223(一群)
-                                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
-                                            <i class="fa fa-qq"></i>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        - QQ群：894449130(二群)
-                                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
-                                            <i class="fa fa-qq"></i>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        - QQ群：844203941(三群)
-                                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
-                                            <i class="fa fa-qq"></i>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        - Discord：https://discord.gg/JpmHpHkjS2
-                                        <button type="button" class="layui-btn layui-btn-normal layui-btn-xs">
-                                            <i class="fab fa-discord"></i>
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                                <div class="row pan-row">
-                                    <div class="layui-col-xs6">
-                                        <i class="fas fa-caret-right" style="color: #FF5722"></i>
-                                        <span class="lan" data-lan-cn="  视频" data-lan-en="  Video">  视频</span>
-                                    </div>
-                                    <div class="layui-col-xs6 pan-btn-box">
-                                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
-                                            <i class="fab fa-youtube-square"></i> Youtube
-                                        </button>
-                                        <button type="button" class="layui-btn layui-btn-normal layui-btn-xs">
-                                            <i class="fa fa-money-bill"></i> Bilibili
-                                        </button>
-                                    </div>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="layui-col-xs6">
-                        <div class="layui-card my-panel">
-                            <div class="layui-card-header lan" data-lan-cn="公园修改器" data-lan-en="Park modifier">公园修改器
-                            </div>
-                            <div class="layui-card-body">
-                                <p>
-                                    <i class="fas fa-caret-right" style="color: #FF5722"></i>
-                                    <span class="lan" data-lan-cn="  功能" data-lan-en="  Function">  功能</span>
-                                </p>
-                                <p></p>
-                                <div class="row pan-row">
-                                    <div class="layui-col-xs6">
-                                        <i class="fas fa-caret-right" style="color: #FF5722"></i>
-                                        <span class="lan" data-lan-cn="  购买" data-lan-en="  Buy">  购买</span>
-                                    </div>
-                                    <div class="layui-col-xs6 pan-btn-box">
-                                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
-                                            <i class="fab fa-alipay"></i> 淘宝
-                                        </button>
-                                        <button type="button" class="layui-btn layui-btn-normal layui-btn-xs">
-                                            <i class="fab fa-stripe-s"></i> Sellix
-                                        </button>
-                                    </div>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    - 游戏更新，软件也需要更新<br>
+                    - 该软件永久免费，请勿上当受骗<br>
+                    - 仅支持正版游戏，不支持盗版或学习版
+                </p>
             </div>
         </div>
     </div>
-    <div class="layui-col-xs4">
-        <div class="row">
-            <div class="layui-col-xs6">
-                -
+    <div class="layui-col-xs12 layui-col-lg4">
+        <div class="layui-card my-panel">
+            <div class="layui-card-header lan" data-lan-cn="免费修改器" data-lan-en="Free modifier">免费修改器
             </div>
-            <div class="layui-col-xs6" id="web-title">
-                Copyright © 2019-2021 FlsEngine.飞雷神
+            <div class="layui-card-body">
+                <p>
+                    <i class="fas fa-caret-right" style="color: #FF5722"></i>
+                    <span class="lan" data-lan-cn="  功能" data-lan-en="  Function">  功能</span>
+                </p>
+                <p>- tese</p>
+
+                <div class="pan-row">
+                    <p>
+                        <i class="fas fa-caret-right" style="color: #FF5722"></i>
+                        <span class="lan" data-lan-cn="  下载" data-lan-en="  Down">  下载</span>
+                    </p>
+                    <p class="lan" data-lan-cn="- 加入QQ群或者Discord获取最新文件"
+                       data-lan-en="- Join QQ group or Discord to get the latest files">
+                        - 加入QQ群或者Discord获取最新文件
+                    </p>
+                    <div>
+                        - QQ群：582273223(一群)
+                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
+                            <i class="fa fa-qq"></i>
+                        </button>
+                    </div>
+                    <div>
+                        - QQ群：894449130(二群)
+                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
+                            <i class="fa fa-qq"></i>
+                        </button>
+                    </div>
+                    <div>
+                        - QQ群：844203941(三群)
+                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
+                            <i class="fa fa-qq"></i>
+                        </button>
+                    </div>
+
+                    <div>
+                        - Discord：https://discord.gg/JpmHpHkjS2
+                        <button type="button" class="layui-btn layui-btn-normal layui-btn-xs">
+                            <i class="fab fa-discord"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row pan-row">
+                    <div class="layui-col-xs6">
+                        <i class="fas fa-caret-right" style="color: #FF5722"></i>
+                        <span class="lan" data-lan-cn="  视频" data-lan-en="  Video">  视频</span>
+                    </div>
+                    <div class="layui-col-xs6 pan-btn-box">
+                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
+                            <i class="fab fa-youtube-square"></i> Youtube
+                        </button>
+                        <button type="button" class="layui-btn layui-btn-normal layui-btn-xs">
+                            <i class="fa fa-money-bill"></i> Bilibili
+                        </button>
+                    </div>
+                </div>
+                <br>
             </div>
         </div>
-        <div id="right-menu-box">
-            <div>
-                <img style="width: 200px;height: 200px" src="./static/images/logo.png">
-                <div>
-                    FlsEngine
-                </div>
+    </div>
+    <div class="layui-col-xs12 layui-col-lg4">
+        <div class="layui-card my-panel">
+            <div class="layui-card-header lan" data-lan-cn="公园修改器" data-lan-en="Park modifier">公园修改器
             </div>
-            <br>
-            <div id="lan-box">
-                <button class="layui-btn layui-btn-danger layui-btn-xs btn-lan" onclick="SetLan('cn')">CN</button>
-                <button class="layui-btn layui-btn-danger layui-btn-xs btn-lan" onclick="SetLan('en')">EN</button>
+            <div class="layui-card-body">
+                <p>
+                    <i class="fas fa-caret-right" style="color: #FF5722"></i>
+                    <span class="lan" data-lan-cn="  功能" data-lan-en="  Function">  功能</span>
+                </p>
+                <p></p>
+                <div class="row pan-row">
+                    <div class="layui-col-xs6">
+                        <i class="fas fa-caret-right" style="color: #FF5722"></i>
+                        <span class="lan" data-lan-cn="  购买" data-lan-en="  Buy">  购买</span>
+                    </div>
+                    <div class="layui-col-xs6 pan-btn-box">
+                        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">
+                            <i class="fab fa-alipay"></i> 淘宝
+                        </button>
+                        <button type="button" class="layui-btn layui-btn-normal layui-btn-xs">
+                            <i class="fab fa-stripe-s"></i> Sellix
+                        </button>
+                    </div>
+                </div>
+                <br>
             </div>
         </div>
     </div>
 </div>
+
+
 <script type="text/javascript" src="./static/js/jquery.js"></script>
 <script type="text/javascript" src="./static/layui/layui.js"></script>
 <script type="text/javascript" src="./static/js/index.js"></script>
